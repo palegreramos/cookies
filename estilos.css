@@ -22,6 +22,9 @@
     align-items: center;
     animation: aparece 1s linear 2s 1 normal forwards;
 }
+img {
+    height: 5vh;
+}
 .buttons {
     display: flex;
     justify-content: space-around;
