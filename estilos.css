@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+* {
+    margin: 0;
+    --resaltar: #00BCEB;
+    --fondo: #0d274dee;
+    --primer: #FFF1EE;
+    --altura: 30vh;
+    --black: rgba(0, 0, 0, 0.8);
+}
+.dialog {
+    font-family: 'Dosis', Arial, sans-serif;
+    background-color: var(--fondo) ;
+    color: var(--primer);
+    border-top-right-radius: 2em;
+    width: 40vw;
+    height: var(--altura);
+    outline: 2px solid var(--resaltar);
+    position: fixed;
+    top: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: aparece 1s linear 2s 1 normal forwards;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.modal { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: crosshair;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+  .modal-dialog {
+    position: relative;
+    width: 50%;
+    max-width: 800px;
+    height: 80%;
+    max-height: 80vh;
+    border-radius: 2rem;
+    background: var(--primer);
+    overflow: auto;
+    cursor: default;
+    display: grid;
+    grid-template: 3rem repeat(4,1fr) 3rem /3rem repeat(4,1fr) 3rem;
+  }
+  .close-btn {
+      text-align: center;
+      grid-column-start: 6;
+      grid-column-end: 6;
+      cursor: pointer;
+      margin: auto;
+  }
+  .modal-title {
+      grid-row: 2/6;
+      grid-column: 2/6;
+      border: 1px solid #059862;
+      border-radius: 2rem;
+      text-align: center;
+  }
+  .visible {
+    visibility: visible;
+    opacity: 1;
+  }
+@keyframes aparece {
+    from {
+        top: 100vh;
+    }
+    to {
+        top: 70vh;
+    }
+}
+
