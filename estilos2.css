@@ -1,95 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
----overlay-bg: rgba(4, 6, 8, .85);
---bg: #222222;
---text: #ffffff;
---btn-primary-bg: #f7cc02;
---btn-primary-text: #000;
---btn-primary-hover-bg: #f7cc02;
---btn-secondary-bg: #505050;
---btn-secondary-text: var(--text);
---btn-secondary-hover-bg: #f7cc02;
---toggle-bg-off: #bbbbba;
---toggle-bg-on: #bbbbbb;
---toggle-bg-readonly: #505050;
---toggle-knob-bg: var(--cookie-category-block-bg);
---toggle-knob-icon-color: var(--bg);
---block-text: #ffffff;
---cookie-category-block-bg: #272727;
---cookie-category-block-bg-hover: #353535;
---section-border: #292d31;
---cookie-table-border: #353535;
---webkit-scrollbar-bg: #444443;
---webkit-scrollbar-bg-hover: #9199a0;
--webkit-font-smoothing: antialiased;
+  ---overlay-bg: rgba(4, 6, 8, 0.85);
+  --bg: #222222;
+  --text: #ffffff;
+  --btn-primary-bg: #f7cc02;
+  --btn-primary-text: #000;
+  --btn-primary-hover-bg: #f7cc02;
+  --btn-secondary-bg: #505050;
+  --btn-secondary-text: var(--text);
+  --btn-secondary-hover-bg: #f7cc02;
+  --toggle-bg-off: #bbbbba;
+  --toggle-bg-on: #bbbbbb;
+  --toggle-bg-readonly: #505050;
+  --toggle-knob-bg: var(--cookie-category-block-bg);
+  --toggle-knob-icon-color: var(--bg);
+  --block-text: #ffffff;
+  --cookie-category-block-bg: #272727;
+  --cookie-category-block-bg-hover: #353535;
+  --section-border: #292d31;
+  --cookie-table-border: #353535;
+  --webkit-scrollbar-bg: #444443;
+  --webkit-scrollbar-bg-hover: #9199a0;
+  -webkit-font-smoothing: antialiased;
 }
 body {
-    font-family: 'Lato', sans-serif;
-    color: var(--block-text);
+  font-family: 'Lato', sans-serif;
+  color: var(--block-text);
 }
 @keyframes aparece {
-    from {    visibility: hidden;
-        opacity: 0;
-    transform: scale(0);}
-    to {visibility: visible;
-        opacity: 1;
-        transform: scale(1);}
-}
-@keyframes aparece {
-    from {    visibility: hidden;
-        opacity: 0;
-    transform: scale(0);}
-    to {visibility: visible;
-        opacity: 1;
-        transform: scale(1);}
-}
-div.avisar {
-   animation: aparece 3s ease 1s 2 alternate;
-
-}
-
-
-.aviso-cookies {
+  from {
     visibility: hidden;
     opacity: 0;
-transform: scale(0);
-text-rendering: optimizeLegibility;
-box-sizing: border-box;
-font-size: 1em;
-border-radius: .35em;
-z-index: 1;
-background: var(--bg);
-bottom: 1.25em;
-box-shadow: 0 .625em 1.875em rgba(2,2,3,.28);
+    transform: scale(0);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes aparece {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+div.avisar {
+  animation: aparece 3s ease 1s 2 alternate;
+}
 
-position: absolute;
-max-width: 50em;
-margin: 0 auto;
-text-align: center;
-left: 1em;
-right: 1em;
-overflow: hidden;
-padding: 1.3em 2em;
-width: unset;
+.aviso-cookies {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  font-size: 1em;
+  border-radius: 0.35em;
+  z-index: 1;
+  background: var(--bg);
+  bottom: 1.25em;
+  box-shadow: 0 0.625em 1.875em rgba(2, 2, 3, 0.28);
 
+  position: absolute;
+  max-width: 50em;
+  margin: 0 auto;
+  text-align: center;
+  left: 1em;
+  right: 1em;
+  overflow: hidden;
+  padding: 1.3em 2em;
+  width: unset;
 }
 button {
-    background-color: var(--btn-secondary-bg);
-    box-sizing: border-box;
-    line-height: 1.5;
-    font-weight: 600;
-    transition: background-color .25s ease;
-    padding: 1em 1.7em;
-    font-size: .82em;
-    text-align: center;
-    border-radius: 4px;
-    width: 40%;
-    margin: 0 0 2px;
+  background-color: var(--btn-secondary-bg);
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-weight: 600;
+  transition: background-color 0.25s ease;
+  padding: 1em 1.7em;
+  font-size: 0.82em;
+  text-align: center;
+  border-radius: 4px;
+  width: 40%;
+  margin: 0 0 2px;
 }
 button.primario {
-    background-color: var(--btn-primary-bg);
+  background-color: var(--btn-primary-bg);
 }
 button.configurar:hover {
-    background-color: var(--btn-primary-bg);
+  background-color: var(--btn-primary-bg);
 }
