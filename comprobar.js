@@ -1,31 +1,31 @@
-function getCookie(c_name){
-    let c_value = document.cookie;
-    let c_start = c_value.indexOf(" " + c_name + "=");
-    if (c_start == -1){
-        c_start = c_value.indexOf(c_name + "=");
+function getCookie(name){
+    let value = document.cookie;
+    let start = value.indexOf(" " + name + "=");
+    if (start == -1){
+        start = value.indexOf(name + "=");
     }
-    if (c_start == -1){
-        c_value = null;
+    if (start == -1){
+        value = null;
     }else{
-        c_start = c_value.indexOf("=", c_start) + 1;
-        var c_end = c_value.indexOf(";", c_start);
-        if (c_end == -1){
-            c_end = c_value.length;
+        start = value.indexOf("=", start) + 1;
+        var end = value.indexOf(";", start);
+        if (end == -1){
+            end = value.length;
         }
-        c_value = c_value.substring(c_start,c_end);
+        value = value.substring(start,end);
     }
-    return c_value;
+    return decodeURIComponent(value);
 }
  
-function setCookie(c_name,value,exdays){
+function setCookie(name,value,exdays){
     var exdate=new Date();
     exdate.setDate(exdate.getDate() + exdays);
-    var c_value=value + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-    document.cookie=c_name + "=" + c_value;
+    var value=value + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+    document.cookie=`${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
 }
  
 
-function PonerCookie(){
+function ponerCookie(){
     setCookie('aviso','1',365);
 }
 
@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     }
         document.querySelector(".primario").addEventListener("click",()=>{
-            PonerCookie();
+            ponerCookie();
             document.querySelector(".avisar").style.animationPlayState="running";
             
             
