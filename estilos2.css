@@ -105,4 +105,15 @@ button.configurar:hover {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
+    width: fit-content;
+        position: sticky;
+        top: 20vh;
+        left: 30vw;
+}
+main {
+    background-color: #bbbbbb;
+    position: fixed;
+    top: 5vh;
+    left: 0;
+    width: 100vw;
 }
