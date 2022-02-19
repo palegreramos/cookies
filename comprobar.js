@@ -17,26 +17,24 @@ function getCookie(name){
     return value;
 }
  
-function setCookie(name,value,exdays){
-    var exdate=new Date();
+function setCookie(name,value,exdays=365){
+    let exdate=new Date();
     exdate.setDate(exdate.getDate() + exdays);
-    var value=value + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+    value=value + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
     document.cookie=`${name}=${value}`;
-}
- 
-
-function ponerCookie(){
-    setCookie('aviso','1',365);
 }
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
     if(getCookie('aviso')===null){
         document.querySelector(".aviso-cookies").classList.add("avisar");
-
+    } else {
+        let valor=parseInt(getCookie('aviso'))+1;
+        setCookie('aviso',valor);
+        document.querySelector(".veces").textContent=valor;
     }
         document.querySelector(".primario").addEventListener("click",()=>{
-            ponerCookie();
+            setCookie('aviso',1);
             document.querySelector(".avisar").style.animationPlayState="running";
             
             
@@ -51,7 +49,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         document.querySelector(".modal").classList.add("visible");
     });
     document.addEventListener("click",(evt)=>{
-       if (evt.target.classList.has("modal")) document.querySelector(".modal").classList.remove("visible");
+       if (evt.target.classList.contains("modal")) document.querySelector(".modal").classList.remove("visible");
     });
 });
 
