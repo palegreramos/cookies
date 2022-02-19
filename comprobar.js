@@ -31,7 +31,7 @@ function ponerCookie(){
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    if(getCookie('aviso')!="1"){
+    if(getCookie('aviso')===null){
         document.querySelector(".aviso-cookies").classList.add("avisar");
 
     }
