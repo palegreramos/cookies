@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('modal.css');
+
+* {
+---overlay-bg: rgba(4, 6, 8, .85);
+--bg: #222222;
+--text: #ffffff;
+--btn-primary-bg: #f7cc02;
+--btn-primary-text: #000;
+--btn-primary-hover-bg: #f7cc02;
+--btn-secondary-bg: #505050;
+--btn-secondary-text: var(--text);
+--btn-secondary-hover-bg: #f7cc02;
+--toggle-bg-off: #bbbbba;
+--toggle-bg-on: #bbbbbb;
+--toggle-bg-readonly: #505050;
+--toggle-knob-bg: var(--cookie-category-block-bg);
+--toggle-knob-icon-color: var(--bg);
+--block-text: #ffffff;
+--cookie-category-block-bg: #272727;
+--cookie-category-block-bg-hover: #353535;
+--section-border: #292d31;
+--cookie-table-border: #353535;
+--webkit-scrollbar-bg: #444443;
+--webkit-scrollbar-bg-hover: #9199a0;
+-webkit-font-smoothing: antialiased;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--block-text);
+}
+@keyframes aparece {
+    from {    visibility: hidden;
+        opacity: 0;
+    transform: scale(0);}
+    to {visibility: visible;
+        opacity: 1;
+        transform: scale(1);}
+}
+@keyframes aparece {
+    from {    visibility: hidden;
+        opacity: 0;
+    transform: scale(0);}
+    to {visibility: visible;
+        opacity: 1;
+        transform: scale(1);}
+}
+div.avisar {
+   animation: aparece 3s ease 1s 2 alternate;
+
+}
+
+
+.aviso-cookies {
+    visibility: hidden;
+    opacity: 0;
+transform: scale(0);
+text-rendering: optimizeLegibility;
+box-sizing: border-box;
+font-size: 1em;
+border-radius: .35em;
+z-index: 1;
+background: var(--bg);
+bottom: 1.25em;
+box-shadow: 0 .625em 1.875em rgba(2,2,3,.28);
+
+position: absolute;
+max-width: 50em;
+margin: 0 auto;
+text-align: center;
+left: 1em;
+right: 1em;
+overflow: hidden;
+padding: 1.3em 2em;
+width: unset;
+
+}
+button {
+    background-color: var(--btn-secondary-bg);
+}
+button.primario {
+    background-color: var(--btn-primary-bg);
+
+}
