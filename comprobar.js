@@ -43,7 +43,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector(".close-btn").addEventListener("click",()=>{
         document.querySelector(".modal").classList.remove("visible");
     });
-    document.querySelector(".avisar").addEventListener("animationiteration", (e)=>{
+    let avisar=document.querySelector(".avisar");
+    if (avisar) avisar.addEventListener("animationiteration", (e)=>{
         e.target.style.animationPlayState="paused";
     });
     document.querySelector(".configurar").addEventListener("click",()=>{
