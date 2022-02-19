@@ -35,6 +35,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
         document.querySelector(".primario").addEventListener("click",()=>{
             setCookie('aviso',1);
+            document.querySelector(".veces").textContent=1;
             document.querySelector(".avisar").style.animationPlayState="running";
             
             
