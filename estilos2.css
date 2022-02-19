@@ -85,10 +85,12 @@ button {
     font-size: .82em;
     text-align: center;
     border-radius: 4px;
-    width: 30%;
+    width: 40%;
     margin: 0 0 2px;
 }
 button.primario {
     background-color: var(--btn-primary-bg);
-
+}
+button.configurar:hover {
+    background-color: var(--btn-primary-bg);
 }
