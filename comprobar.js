@@ -51,7 +51,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.addEventListener("click", evt => {
         if (evt.target.classList.contains("modal")) document.querySelector(".modal").classList.remove("visible");
     });
-    document.querySelector(".veces").addEventListener("click", () => setCookie('aviso', -1, -1));
+    document.querySelector(".veces").addEventListener("click", (evt) => {
+        setCookie('aviso', -1, -1);
+        evt.target.textContent="-";
+    });
 });
 
 
