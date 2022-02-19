@@ -1,11 +1,12 @@
 # Título del proyecto
-## título2
+## Título2
 Texto
 * a
 * b
 * c
-### título3
+### Título3
 otro texto
 + a
 + b
+#### Añadir imagen
 ![Image text](logotipo.webp)
