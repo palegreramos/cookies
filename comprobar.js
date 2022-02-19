@@ -14,14 +14,14 @@ function getCookie(name){
         }
         value = value.substring(start,end);
     }
-    return decodeURIComponent(value);
+    return value;
 }
  
 function setCookie(name,value,exdays){
     var exdate=new Date();
     exdate.setDate(exdate.getDate() + exdays);
     var value=value + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-    document.cookie=`${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
+    document.cookie=`name=${value}`;
 }
  
 
@@ -31,7 +31,6 @@ function ponerCookie(){
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    alert(getCookie('otro'));
     if(getCookie('aviso')!="1"){
         document.querySelector(".aviso-cookies").classList.add("avisar");
 
