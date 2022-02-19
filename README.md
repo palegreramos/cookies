@@ -1,7 +1,7 @@
 # Título del proyecto
 ## título2
 Texto
-*a
-*b
-*c
+* a
+* b
+* c
 ### título3
