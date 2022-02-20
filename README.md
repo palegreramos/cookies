@@ -10,7 +10,7 @@ otro texto
 + b
 #### Añadir imagen
 ![Image text](logotipo.webp){width=640 height=480}
-![text](logotipo.webp){width=640px height=480px}
+![text](logotipo.webp){width=30%}
 
 - [Título del proyecto](#título-del-proyecto)
   - [Título2](#título2)
