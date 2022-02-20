@@ -13,18 +13,17 @@
 		footer {min-height: 5vh;}
 	</style>
 	<script>
-
-		window.onload=()=>{
-			var myModal = new bootstrap.Modal(document.getElementById('exampleModal'),{
+		window.addEventListener('DOMContentLoaded', () => {
+			let myModal = new bootstrap.Modal(document.getElementById('exampleModal'),{
   				backdrop: false, focus: false
 			});
 			window.setInterval(()=>{
 				
 				myModal.toggle();
 
-			}, 6000);
-
-		}
+			}, 5000);		
+		});
+		
 	</script>
 </head>
 <body class="d-flex flex-column">
