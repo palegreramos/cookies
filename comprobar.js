@@ -24,7 +24,6 @@ function setCookie(name, value, exdays = 365) {
     document.cookie = `${name}=${value}`;
 }
 
-
 window.addEventListener('DOMContentLoaded', (event) => {
     if (getCookie('aviso') === null) {
         document.querySelector(".aviso-cookies").classList.add("avisar");
