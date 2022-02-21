@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+#barracookies {
+    background-color: tomato;
+    bottom: 0;
+    color: #fff;
+    font-family: "Source Code Pro",verdana;
+    font-size: 0.8rem;
+    left: 0;
+    line-height: 1.3;
+    min-height: 40px;
+    opacity: 1;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+}
+#barracookies {
+	display: none;
+	z-index: 1;position:fixed;left:0px;right:0px;bottom:0px;min-height:40px;background: tomato;color:#fff;
+	line-height:1.3;
+	font-family:"Source Code Pro",verdana;
+	font-size:.8rem;
+	text-align:center;
+	opacity:.85;} 
+#barracookies a {display: inline-block; padding:1rem;margin: .5rem 1rem;background:#225; color: #fff;text-decoration: none;}
+table, td, tr {
+    margin: 0 auto;
+    border: 1px groove blue;
+}
+aside {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    width: 10%;
+    height: 10%;
+    text-align: center;
+    
+}
+button {
+
+}
+	</style>
+    <script type="text/javascript">
+function setCookie(cname,cvalue,expires,path,domain,secure){
+   /* document.cookie=name+"="+escape(value)+((expires==null)?"":"; expires="+expires.toGMTString())+((path==null)?"":"; path="+path)+((domain==null)?"":"; domain="+domain)+((secure==null)?"":"; secure")*/
+   exdays=365;
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+console.log(document.cookie)
+}
+
+function getCookie(name){
+    var cname=name+"=";
+    var dc=document.cookie;
+    if(dc.length>0){
+        begin=dc.indexOf(cname);
+        if(begin!=-1){
+            begin+=cname.length;
+            end=dc.indexOf(";",begin);
+            if(end==-1) end=dc.length;
+            return unescape(dc.substring(begin,end))
+        }
+    } 
+    return null
+}
+function delCookie(name,path,domain){
+ /*   if(getCookie(name)){
+        document.cookie=name+"="+((path==null)?"":"; path="+path)+((domain==null)?"":"; domain="+domain)+"; expires=Thu, 01-Jan-70 00:00:01 GMT"
+    }*/
+    document.cookie = "avisocookies=;expires=Thu, 01 Jan 1970 00:00:01 UTC";
+    console.log(listCookies())
+    document.body.removeChild(document.getElementById("tabla"));
+    escribeCookies();
+}
+function cookie() {
+		var expiration = new Date(); 
+		expiration.setTime(expiration.getTime() + (60000*60*24*365));
+		setCookie('avisocookies','1',expiration,'/');
+		document.getElementById('barracookies').style.display='none';
+ 
+	}
+function listCookies() {
+    var theCookies = document.cookie.split(';');
+    var aString = '';
+    for (var i = 1 ; i <= theCookies.length; i++) {
+        aString += i + ' ' + theCookies[i-1] + "\n";
+    }
+    return aString;
+}
+function escribeCookies() {
+    var tabla = document.createElement('table');
+    var theCookies = document.cookie.split(';');
+    var cadena = '';
+    for (var i = 1 ; i <= theCookies.length; i++) {
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        cadena = i + ' ' + theCookies[i-1];
+        var text = document.createTextNode(cadena);
+        td.appendChild(text);         
+        tr.appendChild(td);
+        tabla.appendChild(tr);
+    }
+    tabla.setAttribute("id", "tabla");
+    document.body.appendChild(tabla);
+}
+
+	window.onload=function() {
+		document.getElementById("cookie").onclick=cookie;
+        var comprobar = getCookie("avisocookies");
+        if (comprobar != null) {
+        console.log(listCookies())
+        var cuenta=getCookie("avisocookies");
+        cuenta++;
+        }
+        else {
+        cuenta=1;
+        document.getElementById("barracookies").style.display="block"; 
+        }
+        var expiration = new Date();
+        expiration.setTime(expiration.getTime() + (60000*60*24*365));
+        setCookie("avisocookies",cuenta,expiration);
+        escribeCookies();
+	}
+	</script>
+</head>
+<body>
+<aside>
+<button onclick="delCookie('avisocookies','/')">Borra cookie</button>
+<button onclick="location.reload()">Recarga la página</button>
+</aside>
+	<div id="barracookies" >
+&#10;
+En cumplimiento del Real Decreto-ley 13/2012 le informamos que este sitio usa cookies. Si continúa navegando consideramos que acepta el uso de cookies.
+<br>
+<a target="_blank" href="https://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjBhNmC59TKAhUL8RQKHcxEBCYQFggdMAA&url=https%3A%2F%2Fwww.boe.es%2Fboe%2Fdias%2F2012%2F03%2F31%2Fpdfs%2FBOE-A-2012-4442.pdf&usg=AFQjCNFLDyHnFUzVPBnPNdZAvGiXgnICeQl">M&#225;s Informaci&#243;n</a>
+|
+<a id="cookie" href="javascript:void(0);"><b>Aceptar</b>
+</a>
+
+</div>
+</body>
+</html>
